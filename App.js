@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { randomHex, randomUnit } from './helpers/utils';
 
 export default class App extends Component {
   state = { backgroundColor: '#ffffff' };
@@ -58,15 +59,3 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
-
-function randomUnit(chars = '0123456789ABCDEF') {
-  return chars[Math.floor(Math.random() * 16)];
-}
-
-function randomHex(color = '#', i = 0) {
-  while (i < 6) {
-    color += randomUnit();
-    i++;
-  }
-  return color;
-}
